@@ -10,7 +10,7 @@ port: 8080 # Gets overwritten by github. Need this for testing purposes
 
 exclude: [Gemfile, Gemfile.lock]
 
-google_analytics_id: G-ST523Q7VPJ
+google_analytics: G-ST523Q7VPJ
 
 defaults:
   -
