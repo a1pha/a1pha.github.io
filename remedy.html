@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<title>Personal Website - Abhi Jadhav</title>
+	
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="DevCard Bootstrap 4 Template">
+	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+	<link rel="shortcut icon" href="favicon.ico"> 
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	
+	<!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="assets/plugins/tiny-slider/tiny-slider.css">
+
+	<!-- Theme CSS -->  
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+{% include analytics.html %}
+</head> 
+
+<body>
+	
+	<header class="header text-center">	    
+		<div class="force-overflow">
+			<h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Abhi Jadhav</a></h1>
+			
+			<nav class="navbar navbar-expand-lg navbar-dark" >
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div id="navigation" class="collapse navbar-collapse flex-column" >
+					<div class="profile-section pt-3 pt-lg-0">
+						<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+						
+						<div class="bio mb-3">Hi, my name is Abhi Jadhav and I'm a senior at Duke University. Welcome to my personal website!</div><!--//bio-->
+						<ul class="social-list list-inline py-2 mx-auto">
+							<li class="list-inline-item"><a href="https://twitter.com/a1phabot"><i class="fab fa-twitter fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.linkedin.com/in/ajadhav0517"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://github.com/a1pha"><i class="fab fa-github-alt fa-fw"></i></a></li>
+							<li class="list-inline-item"><a href="https://stackexchange.com/users/20239012/abhi-jadhav"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+						</ul><!--//social-list-->
+						<hr> 
+					</div><!--//profile-section-->
+					
+					<ul class="navbar-nav flex-column text-left">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="portfolio.html"><i class="fas fa-laptop-code fa-fw mr-2"></i>Portfolio<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="resume.html"><i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="blog-home.html"><i class="fas fa-blog fa-fw mr-2"></i>Blog</a>
+						</li>
+					</ul>
+					
+					<div class="my-2">
+						<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
+					</div>
+					
+	
+					<div class="dark-mode-toggle text-center w-100">
+						<hr class="mb-4">
+					    <h4 class="toggle-name mb-3 "><i class="fas fa-adjust mr-1"></i>Dark Mode</h4>
+					    
+					    <input class="toggle" id="darkmode" type="checkbox">
+					    <label class="toggle-btn mx-auto mb-0" for="darkmode"></label>
+					    
+					</div><!--//dark-mode-toggle-->
+				</div>
+			</nav>
+		</div><!--//force-overflow-->
+	</header>
+	    
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container single-col-max-width">
+				<h2 class="heading text-center">Sleep Apnea Diagnosis Wearable</h2>
+				<div class="project-intro text-center">
+					<p class="mb-0 lead">Team Members: Abhi Jadhav, Abinaya Lakshmanan, Neil Marks, Aiden Therien
+					</p>
+				</div>
+		    </div><!--//container-->
+	    </section>
+	    <section class="project px-3 py-5 p-md-5">
+		    <div class="container">
+				</div><!--//project-meta-->
+				<div class="project-sections py-5">
+					<div class="project-section mb-5">
+					    <h3 class="project-section-title mb-3">Problem Statement</h3>
+					    <p>We will design a way to detect sleep apnea at home with a comfortable and accessible device for patients that
+							suspect that they have a form of sleep apnea. To simplify the problem, Dr. Wu, our client, has already designed a time-series machine learning algorithm that provides accurate diagnoses that match traditional
+							polysomnography (PSG) tests when given the appropriate biosignals at sufficient sampling rates.
+							Our client requires our device to record abdominal accelerometry, thoracic accelerometry, 3-lead electrocardiogram, and photoplethysmography data at high, specified sampling rates.
+							 </p>
+					</div><!--//project-section-->
+					<div class="project-section mb-5">
+						<h3 class="project-section-title mb-3">Design Specifications</h3>
+						<p>
+							ECG <br>
+							● 16 bits of precision.<br>
+							● >= 250 Hz sampling rate.<br>
+							● 3 lead measurement.<br>
+							● Dynamic Range of 25 - 240 BPM.<br><br>
+							PPG<br>
+							● 12 bits of precision.<br>
+							● >= 100 Hz sampling rate.<br>
+							● Measurement near thoracic cavity.<br><br>
+							Accelerometers (2)<br>
+							● 12 bits of precision.<br>
+							● >= 40 Hz sampling rate.<br>
+							● Measurement near thoracic cavity.<br>
+							● Measurement near abdomen.<br><br>
+							Data Synchronization and Accuracy<br>
+							● Aforementioned signals should report within +/- 5% of true values.<br>
+							● Aforementioned signals should be recorded, started synchronously, and aligned within 5ms.<br><br>
+							Comfortability and Usability<br>
+							● Weighs less than 2 pounds.<br>
+							● Fits on most people.<br>
+							● Is easy to put on.<br>
+							● Is cleanable.<br>
+						</p>
+					</div><!--//project-section-->
+
+
+					
+					<div class="project-section mb-5">
+						 <h3 class="project-section-title">Final Design</h3>
+						 <div class="project-section mb-5">
+							<h4 class="project-ssection-title">Overview</h4>
+								<p>The final design integrates electrical, mechanical, and software designs into one device. The device is broken up
+									into two main enclosures: one central unit on the sternum and one smaller unit on the stomach. The ECG electrode wires
+									extend from these enclosures with the left and right chest electrodes attached to the sternum unit and the ground electrode
+									that attaches to the left hip attached to the abdominal unit. The PPG sensor is housed on the bottom of the sternum unit,
+									and one accelerometer is in each unit. Finally, the batteries, SD card, and microcontroller were stored in the sternum unit
+									since the sternum is a more sturdy location for attachment than the abdomen. </p> 
+								<div class="row mt-5">
+									<div class="col-12 col-lg-6 mb-5">
+										<img class="img-fluid rounded" src="assets/images/projects/sleepapnea/prototype1.JPG" alt="image">
+									</div>
+								</div>
+
+								<h4 class="project-ssection-title">Electrical Design</h4>
+									<p>This device integrates three different sensors - a combined ECG/PPG sensor and two accelerometers - with an
+										ESP32 microcontroller (TinyPICO) and an SD card. The I2C communication protocol is used to communicate between the microcontroller
+										and the sensors to set their sampling parameters and to receive the sampled data at the set frequencies. With I2C, each
+										sensor simply has to be connected to the SDA and SCL data buses to communicate, as well as needing power and ground
+										inputs. The data that is received by the microcontroller is then written to the SD card using SPI communication. The entire
+										circuit is powered by two 3V CR123 batteries with 1500 mAh. Voltage regulators are then used to power the SD card and
+										ECG/PPG sensor at 5V and 1.8V respectively while the accelerometers and the PPG LED are powered by the 3.3V output
+										of the microcontroller. The 5V output of the microcontroller could not power the SD card due to insufficient current
+										giving the need for the separate regulator. For the input signals, the PPG sensor simply has to make contact with the skin,
+										and the ECG electrodes have specific input locations on the sensor. Low pass filters are added to the ECG inputs to clean
+										the signal as well as to add safety resistors. With the many different components in this circuit, three PCBs were created instead of one. This allowed for the
+										PCBs to be stacked to increase the vertical profile of the device rather than the horizontal profile to allow for the PPG
+										sensor to make better contact with the skin. Here are 3 images of the custom designed PCBs:</p>
+										
+										<div class="row" class="center">
+											<div class="column">
+											  <img src="assets/images/projects/sleepapnea/pcb1.JPG" alt="PCB1" style="width:100%">
+											</div>
+											<div class="column">
+											  <img src="assets/images/projects/sleepapnea/pcb2.JPG" alt="PCB2" style="width:100%">
+											</div>
+											<div class="column">
+											  <img src="assets/images/projects/sleepapnea/pcb3.JPG" alt="PCB3" style="width:100%">
+											</div>
+										  </div>
+
+								<h4 class="project-ssection-title">Mechanical Design</h4>
+								<p>The sternum enclosure consisted of a box to place battery holders, two shelves to stack the PCBs, a thin bottom
+									layer to induce higher quality PPG readings, and input/output holes to feed wires/light pipes through. A lid for this
+									enclosure was also created to cover the electronics and to provide switch locations. No attachment method was created for
+									the lid, and tape was used to hold it closed during testing. Here are a few images of the enclosure:</p>
+									<div class="row" class="center">
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/cad1.JPG" alt="PCB1" style="width:100%">
+										</div>
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/cad2.JPG" alt="PCB2" style="width:100%">
+										</div>
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/cad3.JPG" alt="PCB3" style="width:100%">
+										</div>
+										<div class="column">
+											<img src="assets/images/projects/sleepapnea/cad4.JPG" alt="PCB3" style="width:100%">
+										  </div>
+									  </div>
+
+								<h4 class="project-ssection-title">Software Design</h4>
+								<p>An Arduino sketch was written and uploaded to the microcontroller. An outline of this sketch can be seen in the
+									flowchart in below. The main function of the microcontroller is to simply control data flow and storage from the
+									sensors to the SD card as well as control an LED indicator to communicate a successful or
+									unsuccessful use.</p>
+									<div class="row" class="center">
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/software.JPG" alt="PCB1" style="width:100%">
+										</div>
+									  </div>
+
+								<h4 class="project-ssection-title">Integrated Design</h4>
+								<p>Each of these design components were integrated together for the final prototype. The PCBs were fabricated and
+									soldered, the CAD models were 3D printed, and the software was uploaded to the microcontroller. The assembled device
+									can be seen below:</p>
+									<div class="row" class="center">
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/assembled1.JPG" alt="PCB1" style="width:100%">
+										</div>
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/assembled2.JPG" alt="PCB2" style="width:100%">
+										</div>
+										<div class="column">
+										  <img src="assets/images/projects/sleepapnea/assembled3.JPG" alt="PCB3" style="width:100%">
+										</div>
+										<div class="column">
+											<img src="assets/images/projects/sleepapnea/assembled4.JPG" alt="PCB3" style="width:100%">
+										  </div>
+									  </div>
+						 </div>
+
+						
+					</div><!--//project-section-->
+
+					<div class="project-section mb-5">
+						<h3 class="project-section-title">Example Data Collection</h3>
+					   <p>The device is able to collect patient data and save it every 15 minutes. A 15 minute snippet of data is
+						shown below. Upon zooming in, the ECG and PPG waveforms can be observed.</p>
+						<div class="row" class="center">
+							<div class="column">
+							  <img src="assets/images/projects/sleepapnea/data1.JPG" alt="PCB1" style="width:100%">
+							</div>
+							<div class="column">
+							  <img src="assets/images/projects/sleepapnea/data2.JPG" alt="PCB2" style="width:100%">
+							</div>
+							<div class="column">
+							  <img src="assets/images/projects/sleepapnea/data3.JPG" alt="PCB3" style="width:100%">
+							</div>
+						  </div>
+
+				   </div><!--//project-section-->
+					
+					<div class="project-section mb-5">
+					     <h3 class="project-section-title">Next Steps and Improvement Ideas</h3>
+					    <p>Due to time constraints, we were not able to fine tune the mechanical design. We intend to streamline the design by making it smaller, fileting corners, and making the construction less boxy overall.
+						  In addition, we intend to modernize the individual data collection using threading, to parallelize sensor initialization functions, to increase signal synchronization.
+						For more information or a full writeup, please email me!</p>
+					</div><!--//project-section-->
+		    </div>
+	    </section>
+	    <footer class="footer text-center py-4">
+			<small class="copyright">Copyright &copy; 2021 <a href="https://abhijadhav.me" target="_blank">Abhi Jadhav</a></small>
+		</footer>
+        
+    </div><!--//main-wrapper-->
+    
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+	<div id="config-panel" class="config-panel d-none d-lg-block">
+		<div class="panel-inner">
+			<a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i class="fas fa-cog mx-auto" data-fa-transform="down-6" ></i></a>
+			<h5 class="panel-title">Choose Colour</h5>
+			<ul id="color-options" class="list-inline mb-0">
+				<li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+				<li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+				<li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+				<li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+				<li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+				<li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+				<li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+				<li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+				<li class="theme-9  list-inline-item"><a data-style="assets/css/theme-9.css" href="#"></a></li>
+				<li class="theme-10  list-inline-item"><a data-style="assets/css/theme-10.css" href="#"></a></li>
+			</ul>
+			<a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+		</div><!--//panel-inner-->
+	</div><!--//configure-panel-->
+
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Dark Mode -->
+	<script src="assets/plugins/js-cookie.min.js"></script>
+	<script src="assets/js/dark-mode.js"></script>
+
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
