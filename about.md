@@ -4,15 +4,9 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hello! My name is Abhi Jadhav, and I am a recent graduate from [Duke University](https://duke.edu/). I studied biomedical engineering and computer science where I explored the intersection of health and machine learning. Currently, I am a software engineer at [Roblox Corporation](https://www.roblox.com/). Recently, I have been enamored by the world of software/computer performance, which I enjoy writing about as I learn/explore.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My personal links: 
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+[GitHub](https://github.com/a1pha) /
+[LinkedIn](https://www.linkedin.com/in/ajadhav0517/)
