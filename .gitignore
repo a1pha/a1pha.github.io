@@ -1,4 +1,13 @@
-vendor/
-_site/
-node_modules
+# dependencies
+node_modules/
 .next/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Optional npm cache directory
+.npm

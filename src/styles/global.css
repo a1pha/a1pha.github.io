@@ -1,0 +1,128 @@
+@import './theme.css';
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--spacing-4);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Blog post title (h1 in content) */
+.container h1 {
+  font-size: 1.875rem; /* 30px */
+  color: var(--text);
+}
+
+/* Section headings in blog posts */
+.container h2 {
+  font-size: 1.5rem; /* 24px */
+  color: var(--text);
+  margin-top: var(--spacing-8);
+}
+
+.container h3 {
+  font-size: 1.25rem; /* 20px */
+  color: var(--text);
+}
+
+/* Navigation and page titles can stay larger */
+.navbar .logo {
+  font-size: 1.5rem; /* 24px */
+}
+
+p {
+  margin-bottom: var(--spacing-4);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Container */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+/* Basic code block styling */
+pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: var(--background-alt);
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background-color: var(--background-alt);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: var(--spacing-4);
+  padding-left: var(--spacing-8);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+
+.button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Article styling */
+article {
+  margin-bottom: var(--spacing-8);
+}
+
+/* Section spacing */
+section {
+  margin-bottom: var(--spacing-8);
+} 

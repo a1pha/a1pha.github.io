@@ -1,0 +1,187 @@
+export const metadata = {
+  title: "Implementing Consistent Hashing in Python",
+  publishDate: "2024-03-07",
+  categories: ["algorithms", "system-design"]
+};
+
+# Implementing Consistent Hashing in Python
+
+Consistent hashing is a distributed hashing scheme that operates independently of the number of servers or objects in a distributed hash table. Let's implement it from scratch!
+
+## Why Consistent Hashing?
+
+Traditional hash tables face a significant problem in distributed systems: when the number of slots (servers) changes, most keys need to be remapped. Consistent hashing solves this by ensuring that when a server is added or removed, only K/n keys need to be remapped (where K is the number of keys and n is the number of servers).
+
+## Basic Implementation
+
+Here's a Python implementation of consistent hashing:
+
+```python showLineNumbers {1,4-6} title="filename.py"
+import hashlib
+from bisect import bisect
+from typing import List, Optional
+
+class ConsistentHash:
+    def __init__(self, nodes: List[str] = None, replicas: int = 3):
+        """
+        Initialize the hash ring.
+        
+        Args:
+            nodes: List of node names to add to the ring
+            replicas: Number of virtual nodes per real node
+        """
+        self.replicas = replicas
+        self.ring = {}  # hash -> node mapping
+        self.sorted_keys = []  # Sorted list of hash values
+        
+        if nodes:
+            for node in nodes:
+                self.add_node(node)
+    
+    def _hash(self, key: str) -> int:
+        """Generate a hash value for a key."""
+        key_bytes = key.encode('utf-8')
+        big_hash = hashlib.md5(key_bytes).hexdigest()
+        return int(big_hash, 16)
+    
+    def add_node(self, node: str) -> None:
+        """Add a node to the hash ring."""
+        for i in range(self.replicas):
+            virtual_node = f"{node}:{i}"
+            hash_value = self._hash(virtual_node)
+            self.ring[hash_value] = node
+            self.sorted_keys.append(hash_value)
+        
+        self.sorted_keys.sort()
+    
+    def remove_node(self, node: str) -> None:
+        """Remove a node from the hash ring."""
+        for i in range(self.replicas):
+            virtual_node = f"{node}:{i}"
+            hash_value = self._hash(virtual_node)
+            del self.ring[hash_value]
+            self.sorted_keys.remove(hash_value)
+    
+    def get_node(self, key: str) -> Optional[str]:
+        """Get the node responsible for the given key."""
+        if not self.ring:
+            return None
+            
+        hash_value = self._hash(key)
+        idx = bisect(self.sorted_keys, hash_value)
+        
+        # Wrap around to the first node if we've gone past the end
+        if idx == len(self.sorted_keys):
+            idx = 0
+            
+        return self.ring[self.sorted_keys[idx]]
+```
+
+## Using the Implementation
+
+Here's how to use our consistent hashing implementation:
+
+```python
+# Create a consistent hash ring with some nodes
+nodes = ['server1', 'server2', 'server3']
+ch = ConsistentHash(nodes)
+
+# Map some keys to nodes
+keys = ['user1', 'user2', 'user3', 'user4', 'user5']
+for key in keys:
+    node = ch.get_node(key)
+    print(f"Key '{key}' -> Node '{node}'")
+
+# Add a new node
+print("\nAdding server4...")
+ch.add_node('server4')
+
+# Check where keys map to now
+print("\nAfter adding server4:")
+for key in keys:
+    node = ch.get_node(key)
+    print(f"Key '{key}' -> Node '{node}'")
+```
+
+## Testing Distribution
+
+Let's write a function to test the distribution of keys:
+
+```python
+def test_distribution(num_keys: int = 10000):
+    """Test the distribution of keys across nodes."""
+    nodes = ['server1', 'server2', 'server3', 'server4']
+    ch = ConsistentHash(nodes)
+    
+    # Generate test keys
+    distribution = {node: 0 for node in nodes}
+    for i in range(num_keys):
+        key = f"key{i}"
+        node = ch.get_node(key)
+        distribution[node] += 1
+    
+    # Print distribution
+    print("\nKey distribution:")
+    for node, count in distribution.items():
+        percentage = (count / num_keys) * 100
+        print(f"{node}: {count} keys ({percentage:.2f}%)")
+
+# Run the test
+test_distribution()
+```
+
+## Understanding the Implementation
+
+Key aspects of our implementation:
+
+1. **Virtual Nodes**: We create multiple virtual nodes for each real node to improve distribution.
+
+2. **Hash Function**: We use MD5 for consistent hashing. In production, you might want to use a different hash function.
+
+3. **Ring Structure**: We maintain a sorted list of hash values for efficient lookups.
+
+4. **Binary Search**: We use `bisect` for efficient node lookup.
+
+## Performance Analysis
+
+The time complexity of our operations:
+- Add node: O(R log R) where R is the number of replicas
+- Remove node: O(R log R)
+- Get node: O(log N) where N is the total number of nodes
+
+Space complexity:
+- O(N * R) where N is the number of nodes and R is the number of replicas
+
+## Real-World Applications
+
+Consistent hashing is used in:
+- Distributed caches (e.g., Memcached)
+- Content Delivery Networks (CDNs)
+- Load balancers
+- Distributed databases
+
+## Improvements
+
+Some possible improvements to this implementation:
+
+1. **Better Hash Function**:
+```python
+def _hash(self, key: str) -> int:
+    return int(hashlib.blake2b(key.encode()).hexdigest(), 16)
+```
+
+2. **Weight-based Distribution**:
+```python
+class WeightedConsistentHash(ConsistentHash):
+    def __init__(self, nodes: dict[str, int], replicas: int = 3):
+        """nodes is a dict of node -> weight"""
+        super().__init__([], replicas)
+        for node, weight in nodes.items():
+            self.add_node(node, weight)
+```
+
+## Conclusion
+
+Consistent hashing is a powerful technique for distributed systems. This implementation provides a good starting point, but remember to consider your specific use case when adapting it.
+
+Stay tuned for more posts about distributed systems algorithms! 

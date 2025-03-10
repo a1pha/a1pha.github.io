@@ -1,0 +1,7 @@
+{
+  "/(posts)/understanding-tcp-ip/page": "app/(posts)/understanding-tcp-ip/page.js",
+  "/page": "app/page.js",
+  "/(posts)/linux-process-management/page": "app/(posts)/linux-process-management/page.js",
+  "/category/[category]/page": "app/category/[category]/page.js",
+  "/about/page": "app/about/page.js"
+}
