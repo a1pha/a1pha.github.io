@@ -5,7 +5,7 @@ export function Navigation() {
   return (
     <nav className={styles.navbar}>
       <Link href="/" className={styles.logo}>
-        Software Engineering Blog
+        Bits, Cycles, and Packets
       </Link>
       <div className={styles['nav-links']}>
         <Link href="/about" className={styles['nav-link']}>
